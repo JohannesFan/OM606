@@ -10,6 +10,8 @@
         --secondary: #f4f4f4;
         --text: #222;
         --accent: #d4af37;
+        --btn-bg: #003399;
+        --btn-text: #fff;
       }
       body {
         font-family: Arial, Helvetica, sans-serif;
@@ -28,6 +30,66 @@
       h1 { margin: 0; color: var(--primary); }
       h2 { color: var(--primary); border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.2rem; }
       .container { max-width: 900px; margin: 2rem auto; }
+
+      /* Галерея изображений */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+      .image-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .image-wrapper {
+        width: 100%;
+        height: 220px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #eee;
+        overflow: hidden;
+      }
+      .image-wrapper img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+      .image-caption {
+        padding: 1rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      /* Кнопки */
+      .btn-group {
+        padding: 0.75rem 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+      }
+      .btn {
+        background: var(--btn-bg);
+        color: var(--btn-text);
+        border: none;
+        padding: 0.6rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: background 0.2s;
+      }
+      .btn:hover { background: #002266; }
+
+      /* Таблица характеристик */
       .specs-table {
         width: 100%;
         border-collapse: collapse;
@@ -40,6 +102,8 @@
         text-align: left;
       }
       .specs-table th { background: var(--primary); color: white; }
+
+      /* Списки преимуществ */
       .pros-list {
         background: white;
         padding: 1.5rem;
@@ -48,12 +112,14 @@
       }
       .pros-list ul { margin: 0; padding-left: 1.5rem; }
       .pros-list li { margin-bottom: 0.5rem; }
+
       footer {
         text-align: center;
         padding: 1.5rem 0;
         font-size: 0.9rem;
         color: #666;
       }
+
       @media (max-width: 600px) {
         .specs-table, .specs-table thead, .specs-table tbody, .specs-table th, .specs-table td, .specs-table tr {
           display: block;
@@ -77,6 +143,49 @@
     </header>
 
     <div class="container">
+      <!-- Галерея с кнопками -->
+      <section>
+        <h2>Фото Mercedes W124 (OM606)</h2>
+        <p>Ниже — изображения автомобиля. Если картинки не отображаются, это связано с временными ссылками.</p>
+        <div class="gallery-grid">
+          <!-- Карточка 1 -->
+          <div class="image-card">
+            <div class="image-wrapper">
+              <img src="https://fd.oneme.ru/getfile?rq=AFfO5oQh5a-oxokGerowaiPF0IEr1CfwdA1LLQO6GwepZkhfRJAA1YcKh7nkuLPzKyEJqjIgDg8_uF8mqns5VCN_BWkhl63OS_zwJXlR-W8VjoS4-17zmQ&expires=1791463134854" alt="Mercedes W124 вид спереди" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'color:#777\'>Изображение недоступно</span>'" />
+            </div>
+            <div class="image-caption">Вид спереди / общий план</div>
+            <div class="btn-group">
+              <button class="btn" onclick="alert('Здесь можно открыть увеличенное фото или галерею.')">Посмотреть детали</button>
+              <button class="btn" onclick="alert('Сравнение версий W124: атмосферная vs турбо, седан vs универсал.')">Сравнить версии</button>
+            </div>
+          </div>
+
+          <!-- Карточка 2 -->
+          <div class="image-card">
+            <div class="image-wrapper">
+              <img src="https://fd.oneme.ru/getfile?rq=AFfO5oQh5a-oxokGerrMWiwPvgRyokCe1XhQIUSPpOlB4BwVEVc1V-z3acj5ijAH_yHor7vKctXiAdx-BcYlqTf6Im7gEho9mztxNNYyFnyS4qYSVZDTPg&expires=1791463152090" alt="Mercedes W124 боковой профиль" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'color:#777\'>Изображение недоступно</span>'" />
+            </div>
+            <div class="image-caption">Боковой профиль / силуэт</div>
+            <div class="btn-group">
+              <button class="btn" onclick="alert('Здесь можно открыть увеличенное фото или галерею.')">Посмотреть детали</button>
+              <button class="btn" onclick="alert('Скачать PDF: габариты, клиренс, колёсная база.')">Скачать спецификацию</button>
+            </div>
+          </div>
+
+          <!-- Карточка 3 -->
+          <div class="image-card">
+            <div class="image-wrapper">
+              <img src="https://fd.oneme.ru/getfile?rq=AFfO5oQh5a-oxokGerqgzC3Pimr_9t48LC2RphmeePDIoOy8ZcgFJ0Kvvy4SSH1VUQxMdZIv-o9HW99EfAbkn_uxB-hNUjf9A5XrsbnzFsXjs-KziaDJ5Q&expires=1791463165641" alt="Mercedes W124 интерьер/детали" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'color:#777\'>Изображение недоступно</span>'" />
+            </div>
+            <div class="image-caption">Интерьер / детали кузова</div>
+            <div class="btn-group">
+              <button class="btn" onclick="alert('Здесь можно открыть увеличенное фото или галерею.')">Посмотреть детали</button>
+              <button class="btn" onclick="alert('Открыть список типовых неисправностей и решений.')">Типовые неисправности</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section>
         <h2>Кратко о модели</h2>
         <p>Mercedes-Benz W124 — легендарный бизнес-седан, выпускавшийся с 1984 по 1995 год. Версия с дизельным двигателем OM606 ценится за исключительную надёжность, ремонтопригодность и солидный ресурс. Такие автомобили нередко встречаются в эксплуатации как классические и коллекционные экземпляры.</p>
@@ -92,54 +201,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td data-label="Тип двигателя">Тип двигателя</td>
-              <td>Рядный 6‑цилиндровый дизель, форкамерный</td>
-            </tr>
-            <tr>
-              <td data-label="Рабочий объём">Рабочий объём</td>
-              <td>2996 см³ (3.0 л)</td>
-            </tr>
-            <tr>
-              <td data-label="Мощность (атмосферная версия)">Мощность (атмосферная версия)</td>
-              <td>136 л.с. при 4600 об/мин</td>
-            </tr>
-            <tr>
-              <td data-label="Мощность (турбированная версия)">Мощность (турбированная версия)</td>
-              <td>до 177 л.с.</td>
-            </tr>
-            <tr>
-              <td data-label="Крутящий момент">Крутящий момент</td>
-              <td>до 330 Н·м (турбо)</td>
-            </tr>
-            <tr>
-              <td data-label="Система питания">Система питания</td>
-              <td>ТНВД Bosch (механический/электронно-управляемый)</td>
-            </tr>
-            <tr>
-              <td data-label="ГРМ">ГРМ</td>
-              <td>Цепной привод</td>
-            </tr>
-            <tr>
-              <td data-label="Блок цилиндров">Блок цилиндров</td>
-              <td>Чугунный</td>
-            </tr>
-            <tr>
-              <td data-label="Головка блока">Головка блока</td>
-              <td>Алюминиевая, 24 клапана</td>
-            </tr>
-            <tr>
-              <td data-label="Степень сжатия">Степень сжатия</td>
-              <td>~22:1</td>
-            </tr>
-            <tr>
-              <td data-label="Экологический класс">Экологический класс</td>
-              <td>Евро‑1</td>
-            </tr>
-            <tr>
-              <td data-label="Ориентировочный ресурс">Ориентировочный ресурс</td>
-              <td>450 000–500 000+ км при грамотном обслуживании</td>
-            </tr>
+            <tr><td data-label="Тип двигателя">Тип двигателя</td><td>Рядный 6‑цилиндровый дизель, форкамерный</td></tr>
+            <tr><td data-label="Рабочий объём">Рабочий объём</td><td>2996 см³ (3.0 л)</td></tr>
+            <tr><td data-label="Мощность (атмосферная версия)">Мощность (атмосферная версия)</td><td>136 л.с. при 4600 об/мин</td></tr>
+            <tr><td data-label="Мощность (турбированная версия)">Мощность (турбированная версия)</td><td>до 177 л.с.</td></tr>
+            <tr><td data-label="Крутящий момент">Крутящий момент</td><td>до 330 Н·м (турбо)</td></tr>
+            <tr><td data-label="Система питания">Система питания</td><td>ТНВД Bosch (механический/электронно-управляемый)</td></tr>
+            <tr><td data-label="ГРМ">ГРМ</td><td>Цепной привод</td></tr>
+            <tr><td data-label="Блок цилиндров">Блок цилиндров</td><td>Чугунный</td></tr>
+            <tr><td data-label="Головка блока">Головка блока</td><td>Алюминиевая, 24 клапана</td></tr>
+            <tr><td data-label="Степень сжатия">Степень сжатия</td><td>~22:1</td></tr>
+            <tr><td data-label="Экологический класс">Экологический класс</td><td>Евро‑1</td></tr>
+            <tr><td data-label="Ориентировочный ресурс">Ориентировочный ресурс</td><td>450 000–500 000+ км при грамотном обслуживании</td></tr>
           </tbody>
         </table>
       </section>
